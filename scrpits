@@ -11,3 +11,9 @@ node {
         sh 'docker push kishoreav/java-app'
     }
 }
+node("k8s"){
+stage("deployment"){
+sh "export KUBECONFIG=/etc/kubernetes/admin.conf"
+sh "sudo kubectl rollout restart deployment/java-app"
+}
+}
