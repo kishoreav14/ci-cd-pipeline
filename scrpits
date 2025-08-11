@@ -8,7 +8,7 @@ node {
     stage('Docker Build & Push') {
         sh 'docker build -t kishoreav/java-app .'
         sh 'echo Kish_ore_123#! | docker login -u kishoreav --password-stdin'
-        sh 'docker push kishoreav/java-app'
+        sh 'docker push kishoreav/java-app.'
     }
 }
 node("k8s"){
